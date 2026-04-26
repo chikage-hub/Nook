@@ -11,46 +11,38 @@
 :root{--cr:#F5F0E8;--dk:#1A1814;--wm:#C8A97E;--ac:#8B6F47;--mu:#9A9189;--lb:#E8DFD0;--bd:rgba(200,169,126,0.25);}
 html{scroll-behavior:smooth;}
 body{background:var(--cr);color:var(--dk);font-family:'DM Sans',sans-serif;line-height:1.6;overflow-x:hidden;}
-
-/* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(245,240,232,0.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--bd);}
 .logo{font-family:'Playfair Display',serif;font-size:20px;letter-spacing:0.18em;color:var(--dk);text-decoration:none;}
 .nav-r{display:flex;gap:28px;}
 .nav-r a{font-size:11px;letter-spacing:0.1em;color:var(--mu);text-decoration:none;text-transform:uppercase;transition:color .2s;}
 .nav-r a:hover{color:var(--dk);}
-
-/* ── BUTTONS ── */
 .btn{display:inline-block;padding:13px 32px;border-radius:2px;font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:all .25s;border:none;}
 .btn-d{background:var(--dk);color:var(--cr);}
 .btn-d:hover{background:var(--ac);transform:translateY(-2px);}
 .btn-o{background:transparent;color:var(--dk);border:1px solid rgba(26,24,20,.35);}
 .btn-o:hover{border-color:var(--dk);transform:translateY(-2px);}
-
-/* ── SECTIONS ── */
 .sec{padding:64px 40px;}
 .sec-hd{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:36px;border-bottom:1px solid var(--bd);padding-bottom:14px;}
 .sec-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:400;}
 .sec-title em{font-style:italic;color:var(--ac);}
 .see-all{font-size:10px;color:var(--mu);text-transform:uppercase;text-decoration:none;border-bottom:0.5px solid var(--mu);padding-bottom:2px;white-space:nowrap;}
-
-/* ── CATEGORY CARDS（5列グリッド）── */
 .grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
 .cat5{position:relative;border-radius:4px;aspect-ratio:2/3;overflow:hidden;cursor:pointer;text-decoration:none;display:block;transition:transform .35s;}
 .cat5:hover{transform:translateY(-6px);}
-.cat5:hover .ov{opacity:.6;}
+.cat5:hover .ov{opacity:.5;}
+.cat5 .cbg-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s;}
+.cat5:hover .cbg-img{transform:scale(1.06);}
 .cbg{width:100%;height:100%;}
-.ov{position:absolute;inset:0;background:rgba(26,24,20,.38);opacity:.28;transition:opacity .3s;}
-.clbl{position:absolute;bottom:0;left:0;right:0;padding:14px 10px;background:linear-gradient(transparent,rgba(0,0,0,.65));color:white;}
+.ov{position:absolute;inset:0;background:rgba(26,24,20,.35);opacity:.22;transition:opacity .3s;}
+.clbl{position:absolute;bottom:0;left:0;right:0;padding:14px 10px;background:linear-gradient(transparent,rgba(0,0,0,.7));color:white;}
 .clbl h3{font-family:'Playfair Display',serif;font-size:13px;font-weight:400;}
-.clbl p{font-size:9px;color:rgba(255,255,255,.6);margin-top:2px;}
+.clbl p{font-size:9px;color:rgba(255,255,255,.65);margin-top:2px;}
 .clbl .arr{font-size:10px;margin-top:4px;display:inline-block;transition:transform .2s;}
 .cat5:hover .arr{transform:translateX(4px);}
-
-/* ── PRODUCT GRID（実商品 3列）── */
 .rg-wrap{padding:0 40px 56px;}
 .rg-head{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;margin-bottom:22px;padding-bottom:12px;border-bottom:1px solid var(--bd);}
 .rg-head em{font-style:italic;color:var(--ac);}
-.rg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:0;}
+.rg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
 .rg-card{background:#fff;border:1px solid var(--bd);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s;}
 .rg-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(26,24,20,.1);}
 .rg-photo{overflow:hidden;aspect-ratio:1/1;background:var(--lb);flex-shrink:0;}
@@ -65,15 +57,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 40px;display:fl
 .rg-price{font-family:'Playfair Display',serif;font-size:14px;font-weight:400;color:var(--dk);white-space:nowrap;}
 .rg-btn a{display:inline-block;background:#f76956;color:#fff;font-size:9px;font-weight:500;padding:8px 12px;border-radius:3px;text-decoration:none;white-space:nowrap;transition:opacity .2s;}
 .rg-btn a:hover{opacity:.85;}
-
-/* ── FEATURES BAR ── */
 .fbar{padding:48px 40px;background:var(--lb);display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
 .feat{text-align:center;}
 .fsym{font-size:20px;margin-bottom:10px;color:var(--ac);}
 .feat h4{font-family:'Playfair Display',serif;font-size:14px;margin-bottom:6px;font-weight:400;}
 .feat p{font-size:12px;color:var(--mu);line-height:1.65;}
-
-/* ── FOOTER ── */
 footer{background:var(--dk);color:var(--cr);padding:56px 40px 28px;}
 .ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
 .fbrand{font-family:'Playfair Display',serif;font-size:22px;margin-bottom:12px;}
@@ -82,9 +70,9 @@ footer{background:var(--dk);color:var(--cr);padding:56px 40px 28px;}
 .fc a{display:block;font-size:12px;color:rgba(245,240,232,.52);text-decoration:none;margin-bottom:8px;}
 .fc a:hover{color:var(--cr);}
 .fb{border-top:1px solid rgba(255,255,255,.07);padding-top:18px;display:flex;justify-content:space-between;font-size:10px;color:rgba(245,240,232,.22);flex-wrap:wrap;gap:8px;}
-
-/* ── PAGE HERO ── */
-.ph{padding:56px 40px 64px;text-align:center;}
+.ph{padding:56px 40px 64px;text-align:center;position:relative;overflow:hidden;}
+.ph-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.25;}
+.ph-content{position:relative;z-index:1;}
 .ph-ey{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--wm);margin-bottom:14px;}
 .ph-t{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,56px);font-weight:400;line-height:1.1;margin-bottom:14px;}
 .ph-t em{font-style:italic;color:var(--ac);}
@@ -92,60 +80,38 @@ footer{background:var(--dk);color:var(--cr);padding:56px 40px 28px;}
 .bc{padding:88px 40px 0;font-size:11px;color:var(--mu);}
 .bc a{color:var(--mu);text-decoration:none;}
 .bc span{margin:0 6px;}
-
-/* ── ANIMATIONS ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
 .f1{animation:fadeUp .8s ease both;}
 .f2{animation:fadeUp .85s .1s ease both;}
 .f3{animation:fadeUp .9s .2s ease both;}
 .f4{animation:fadeUp .95s .3s ease both;}
-
-/* ══════════════════════════════════════════
-   MOBILE（〜768px）
-══════════════════════════════════════════ */
 @media(max-width:768px){
-  nav{padding:12px 18px;}
-  .nav-r a:first-child{display:none;}
-
-  .sec{padding:48px 18px;}
-  .sec-hd{margin-bottom:24px;}
-  .sec-title{font-size:22px;}
-
+  nav{padding:12px 18px;}.nav-r a:first-child{display:none;}
+  .sec{padding:48px 18px;}.sec-title{font-size:22px;}
   .grid5{grid-template-columns:repeat(3,1fr);gap:8px;}
-  .clbl h3{font-size:11px;}
-  .clbl p{display:none;}
-
-  .rg-wrap{padding:0 18px 48px;}
-  .rg-head{font-size:18px;}
+  .clbl h3{font-size:11px;}.clbl p{display:none;}
+  .rg-wrap{padding:0 18px 48px;}.rg-head{font-size:18px;}
   .rg-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
-  .rg-body{padding:10px 10px 12px;}
-  .rg-name{font-size:12px;}
-  .rg-desc{display:none;}
-  .rg-price{font-size:13px;}
+  .rg-body{padding:10px 10px 12px;}.rg-name{font-size:12px;}
+  .rg-desc{display:none;}.rg-price{font-size:13px;}
   .rg-btn a{font-size:9px;padding:7px 10px;}
-
   .fbar{grid-template-columns:1fr;padding:36px 18px;gap:24px;}
-
-  footer{padding:40px 18px 20px;}
-  .ft{grid-template-columns:1fr 1fr;gap:24px;}
-  .fbrand{font-size:18px;}
-
+  footer{padding:40px 18px 20px;}.ft{grid-template-columns:1fr 1fr;gap:24px;}
   .ph{padding:100px 18px 48px;}
-  .ph-t{font-size:clamp(28px,8vw,44px);}
   .bc{padding:76px 18px 0;}
 }
-
-/* ══════════════════════════════════════════
-   SMALL MOBILE（〜480px）
-══════════════════════════════════════════ */
 @media(max-width:480px){
   .grid5{grid-template-columns:repeat(2,1fr);}
   .rg-grid{grid-template-columns:1fr 1fr;}
   .ft{grid-template-columns:1fr;}
-  .fb{flex-direction:column;gap:4px;}
 }
 
-.ph{padding:120px 40px 56px;text-align:center;}
+.ph{padding:120px 40px 56px;text-align:center;background:linear-gradient(160deg,#f0ede5,#e8e0d4);}
+.ph-content{position:relative;z-index:1;}
+.ph-ey{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--wm);margin-bottom:14px;}
+.ph-t{font-family:'Playfair Display',serif;font-size:clamp(30px,5vw,52px);font-weight:400;line-height:1.1;margin-bottom:14px;}
+.ph-t em{font-style:italic;color:var(--ac);}
+.ph-d{font-size:14px;color:var(--mu);max-width:440px;margin:0 auto;line-height:1.75;}
 .dw{max-width:700px;margin:0 auto;padding:0 40px 96px;}
 .prog-bar{height:3px;background:var(--lb);border-radius:2px;margin-bottom:44px;}
 .prog-fill{height:3px;background:var(--ac);border-radius:2px;transition:width .4s ease;}
@@ -170,11 +136,12 @@ footer{background:var(--dk);color:var(--cr);padding:56px 40px 28px;}
 .qstep{font-size:11px;color:var(--mu);}
 .rw{display:none;text-align:center;padding:32px 0;}
 .rbadge{display:inline-block;padding:5px 16px;background:var(--lb);border-radius:2px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ac);margin-bottom:16px;}
-.rtitle{font-family:'Playfair Display',serif;font-size:32px;font-weight:400;margin-bottom:8px;}
+.rtitle{font-family:'Playfair Display',serif;font-size:30px;font-weight:400;margin-bottom:8px;}
 .rtitle em{font-style:italic;color:var(--ac);}
-.rsub{font-size:14px;color:var(--mu);line-height:1.75;max-width:460px;margin:0 auto 28px;}
-.rimg{width:100%;max-width:360px;aspect-ratio:4/3;border-radius:4px;margin:0 auto 28px;display:flex;align-items:center;justify-content:center;font-size:56px;}
-.sp{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:20px 0 32px;text-align:left;}
+.rsub-text{font-size:14px;color:var(--mu);line-height:1.75;max-width:460px;margin:0 auto 24px;}
+.rimg{width:100%;max-width:360px;aspect-ratio:4/3;border-radius:4px;margin:0 auto 24px;overflow:hidden;}
+.rimg img{width:100%;height:100%;object-fit:cover;display:block;}
+.sp{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:20px 0 28px;text-align:left;}
 .spc{padding:14px 16px;border:1px solid var(--bd);border-radius:4px;background:white;}
 .spc h4{font-family:'Playfair Display',serif;font-size:14px;font-weight:400;margin-bottom:4px;}
 .spc p{font-size:11px;color:var(--mu);line-height:1.55;}
@@ -193,7 +160,7 @@ footer{background:var(--dk);color:var(--cr);padding:56px 40px 28px;}
 </head>
 <body>
 <nav><a href="index.html" class="logo">NOOK</a><div class="nav-r"><a href="diagnosis.html">診断</a><a href="about.html">About us</a></div></nav>
-<section class="ph"><p class="ph-ey">Interior Soul Diagnosis</p><h1 class="ph-t">インテリア・<em>ソウル診断</em></h1><p class="ph-d">7つの質問に答えるだけで、あなたの部屋スタイルが分かります。所要時間は約2分。</p></section>
+<section class="ph"><div class="ph-content"><p class="ph-ey">Interior Soul Diagnosis</p><h1 class="ph-t">インテリア・<em>ソウル診断</em></h1><p class="ph-d">7つの質問に答えるだけで、あなたの部屋スタイルが分かります。所要時間は約2分。</p></div></section>
 <div class="dw">
 <div class="prog-bar"><div class="prog-fill" id="prog" style="width:0%"></div></div>
 <div class="qc active" data-q="0"><p class="qn">Question 01 / 07</p><h2 class="qt">休日、<em>理想の過ごし方</em>は？</h2><div class="opts"><div class="opt" data-val="A"><span class="ok">A</span><span class="ot">お気に入りのカフェで読書、または整理整頓をしてスッキリ過ごす。</span></div><div class="opt" data-val="B"><span class="ok">B</span><span class="ot">都会のホテルのラウンジで、洗練された空間と夜景を楽しむ。</span></div><div class="opt" data-val="C"><span class="ok">C</span><span class="ot">趣味のガレージや古着屋で、一点モノの宝探しをする。</span></div><div class="opt" data-val="D"><span class="ok">D</span><span class="ot">海辺の散歩やキャンプ、植物の手入れをして自然を感じる。</span></div><div class="opt" data-val="E"><span class="ok">E</span><span class="ot">格式高いレストランや、伝統を感じる静かな空間で背筋を伸ばす。</span></div><div class="opt" data-val="F"><span class="ok">F</span><span class="ot">お花を飾って、手作りのスイーツと紅茶でゆっくりティータイム。</span></div></div><div class="qnav"><button class="nbtn nbtn-o" disabled>← 戻る</button><span class="qstep">1 / 7</span><button class="nbtn nbtn-d" id="n0">次へ →</button></div></div>
@@ -204,7 +171,7 @@ footer{background:var(--dk);color:var(--cr);padding:56px 40px 28px;}
 <div class="qc" data-q="5"><p class="qn">Question 06 / 07</p><h2 class="qt">あなたの<em>性格</em>を例えるなら？</h2><div class="opts"><div class="opt" data-val="A"><span class="ok">A</span><span class="ot">合理的で誠実。清潔感を大切にする。</span></div><div class="opt" data-val="B"><span class="ok">B</span><span class="ot">クールで都会的。無駄なものは持ちたくない。</span></div><div class="opt" data-val="C"><span class="ok">C</span><span class="ot">凝り性で個性的。こだわりが強く、自分らしさを大事にする。</span></div><div class="opt" data-val="D"><span class="ok">D</span><span class="ot">自由奔放で穏やか。心身の癒やしを優先する。</span></div><div class="opt" data-val="E"><span class="ok">E</span><span class="ot">礼儀正しく、本物志向。上質な暮らしに憧れる。</span></div><div class="opt" data-val="F"><span class="ok">F</span><span class="ot">感受性豊かで優しい。可愛いものに囲まれると幸せ。</span></div></div><div class="qnav"><button class="nbtn nbtn-o" onclick="goBack(5)">← 戻る</button><span class="qstep">6 / 7</span><button class="nbtn nbtn-d" id="n5">次へ →</button></div></div>
 <div class="qc" data-q="6"><p class="qn">Question 07 / 07</p><h2 class="qt">部屋に招いた友人に、<em>何と言われたい</em>？</h2><div class="opts"><div class="opt" data-val="A"><span class="ok">A</span><span class="ot">「センスいいし、すごく居心地が良くて落ち着くね！」</span></div><div class="opt" data-val="B"><span class="ok">B</span><span class="ot">「モデルルームみたい！生活感なくてカッコいい。」</span></div><div class="opt" data-val="C"><span class="ok">C</span><span class="ot">「隠れ家ショップみたいで、こだわりがすごい！」</span></div><div class="opt" data-val="D"><span class="ok">D</span><span class="ot">「まるで旅行に来たみたい。リラックスしちゃう。」</span></div><div class="opt" data-val="E"><span class="ok">E</span><span class="ot">「高級感があって、特別な気分になれる場所だね。」</span></div><div class="opt" data-val="F"><span class="ok">F</span><span class="ot">「可愛くてお洒落！映画に出てきそうなお部屋。」</span></div></div><div class="qnav"><button class="nbtn nbtn-o" onclick="goBack(6)">← 戻る</button><span class="qstep">7 / 7</span><button class="nbtn nbtn-d" id="n6">結果を見る</button></div></div>
 <div class="rw" id="result">
-<div class="rbadge" id="rb">診断結果</div><h2 class="rtitle" id="rt"></h2><p class="rsub" id="rs"></p>
+<div class="rbadge" id="rb">診断結果</div><h2 class="rtitle" id="rt"></h2><p class="rsub-text" id="rs"></p>
 <div class="rimg" id="ri"></div>
 <div style="text-align:left;margin-bottom:8px;font-size:12px;color:var(--mu);">あなたに近いスタイル</div>
 <div class="sp" id="sp"></div>
@@ -219,8 +186,8 @@ footer{background:var(--dk);color:var(--cr);padding:56px 40px 28px;}
 <div class="gc"><p class="gkw">05 · Vintage</p><h4>ヴィンテージスタイル</h4><p>ダークブラウンと革の渋み。経年変化を楽しむキャメル革ソファと古材が主役。</p></div>
 <div class="gc"><p class="gkw">06 · Industrial</p><h4>インダストリアルスタイル</h4><p>鉄・コンクリート・剥き出しの配管。アイアン脚の家具とエジソン電球で無骨な空間に。</p></div>
 <div class="gc"><p class="gkw">07 · Simple Modern</p><h4>シンプルモダンスタイル</h4><p>究極の引き算。収納をすべて隠し、直線的な家具だけを置くミニマリストの完成形。</p></div>
-<div class="gc"><p class="gkw">08 · Japandi</p><h4>ジャパンディスタイル</h4><p>和×北欧。グレージュとマットな木目が融合した、今最も人気の「静」のスタイル。</p></div>
-<div class="gc"><p class="gkw">09 · Korean</p><h4>韓国スタイル</h4><p>アイボリーとベージュの淡い空間。ウェーブミラーと丸いフォルムで「映え」を演出。</p></div>
+<div class="gc"><p class="gkw">08 · Japandi</p><h4>ジャパンディスタイル</h4><p>和×北欧。グレージュとマットな木目が融合した、今最も人気の静のスタイル。</p></div>
+<div class="gc"><p class="gkw">09 · Korean</p><h4>韓国スタイル</h4><p>アイボリーとベージュの淡い空間。ウェーブミラーと丸いフォルムで映えを演出。</p></div>
 <div class="gc"><p class="gkw">10 · Mid-Century</p><h4>ミッドセンチュリースタイル</h4><p>1950年代の近未来感。イームズチェアや幾何学模様がオレンジ・深木目と融合。</p></div>
 <div class="gc"><p class="gkw">11 · Bohemian</p><h4>ボヘミアンスタイル</h4><p>民族柄・多色使いで旅人のような自由な空間。マクラメとキリム柄のラグが定番。</p></div>
 <div class="gc"><p class="gkw">12 · Hotel-like</p><h4>ホテルライクスタイル</h4><p>左右対称の整然とした非日常空間。間接照明とフットスローで高級ホテルを再現。</p></div>
@@ -244,12 +211,12 @@ footer{background:var(--dk);color:var(--cr);padding:56px 40px 28px;}
 <script>
 const ans=Array(7).fill(null);
 const R={
-A:{title:'シンプル＆ナチュラル派',sub:'清潔感と温もりを大切にするあなたには、機能的でありながら自然素材の温かみを感じる空間が似合います。',img:'🌿',bg:'background:linear-gradient(135deg,#E8DFD0,#C8A97E)',picks:[{n:'北欧スタイル',d:'機能的で明るい。差し色にブルーやイエローを。'},{n:'ナチュラルスタイル',d:'木の温もり全開。最も標準的で落ち着く定番。'},{n:'ジャパンディスタイル',d:'和×北欧の融合。今一番人気の静のスタイル。'},{n:'韓国スタイル',d:'白×ベージュ。丸いフォルムと淡い空間が特徴。'}]},
-B:{title:'クール＆スタイリッシュ派',sub:'無駄を嫌い、洗練されたものを好むあなたには、モノトーンで構成されたスタイリッシュな空間がぴったり。',img:'🏙',bg:'background:linear-gradient(135deg,#2C2C2A,#5F5E5A)',picks:[{n:'モダンスタイル',d:'モノトーン・ガラス・金属で都会の夜が似合う空間。'},{n:'シンプルモダン',d:'装飾ゼロ。ミニマリストの究極形。'},{n:'ホテルライク',d:'左右対称の美。高級ホテルのような整然とした空間。'},{n:'インダストリアル',d:'鉄とコンクリート。無骨でクールな工場系スタイル。'}]},
-C:{title:'レトロ＆ラフ派',sub:'こだわりが強く自分らしさを大切にするあなたには、経年変化や歴史を感じる素材感のある空間が合います。',img:'🔧',bg:'background:linear-gradient(135deg,#4A3828,#8B6F47)',picks:[{n:'ヴィンテージスタイル',d:'濃い茶色と革。歴史を感じる渋いスタイル。'},{n:'インダストリアル',d:'鉄・コンクリート・剥き出しの配管。工場のような無骨さ。'},{n:'ミッドセンチュリー',d:'1950年代の近未来感。デザイナーズ家具が主役。'},{n:'ボヘミアン',d:'民族柄・多色使いで旅人のような自由な空間。'}]},
-D:{title:'エキゾチック＆ネイチャー派',sub:'自然と自由を愛するあなたには、開放感あふれるリゾート感や植物に囲まれた空間がぴったり。',img:'🌴',bg:'background:linear-gradient(135deg,#4A6741,#7A9E76)',picks:[{n:'リゾートスタイル',d:'ラタン・アジアン家具でバリ島や南国の別荘風に。'},{n:'ボタニカルスタイル',d:'植物が主役。緑に飲み込まれるような癒やしの森。'},{n:'西海岸スタイル',d:'デニム・海・褪せたブルー。カリフォルニアの自由な風。'},{n:'ボヘミアン',d:'民族柄・多色使いで旅人のようにアーティスティックに。'}]},
-E:{title:'ハイクラス＆トラディショナル派',sub:'本物志向で上質な暮らしに憧れるあなたには、格式と品格のある空間が似合います。',img:'✦',bg:'background:linear-gradient(135deg,#8B6F47,#C8A97E)',picks:[{n:'ラグジュアリースタイル',d:'大理石・金・ベルベット。成功者の華やかな部屋。'},{n:'和モダンスタイル',d:'畳・障子・木格子を現代風にアレンジした静寂の美。'},{n:'ホテルライク',d:'整然とした非日常空間。高級ホテルの雰囲気を自宅に。'},{n:'ミッドセンチュリー',d:'本物のデザイナーズ家具が主役の個性的なスタイル。'}]},
-F:{title:'フェミニン＆ノスタルジック派',sub:'感受性豊かで可愛いものに心が動くあなたには、柔らかく温かみのある物語を感じる空間がぴったり。',img:'🌸',bg:'background:linear-gradient(135deg,#E8DFD0,#D4A4A0)',picks:[{n:'シャビーシックスタイル',d:'剥げた白塗装にレース・アンティーク。古くて上品な空間。'},{n:'カントリースタイル',d:'パイン材とチェック柄。赤毛のアンのような家庭的な温かさ。'},{n:'韓国スタイル',d:'アイボリーとベージュの淡い空間。丸いフォルムで映えを演出。'},{n:'ボタニカルスタイル',d:'花と植物に囲まれた、やさしい癒やしの部屋。'}]}
+A:{title:'シンプル＆ナチュラル派',sub:'清潔感と温もりを大切にするあなたには、機能的でありながら自然素材の温かみを感じる空間が似合います。',img:'diag-type-a.png',picks:[{n:'北欧スタイル',d:'機能的で明るい。差し色にブルーやイエローを。'},{n:'ナチュラルスタイル',d:'木の温もり全開。最も標準的で落ち着く定番。'},{n:'ジャパンディスタイル',d:'和×北欧の融合。今一番人気の静のスタイル。'},{n:'韓国スタイル',d:'白×ベージュ。丸いフォルムと淡い空間が特徴。'}]},
+B:{title:'クール＆スタイリッシュ派',sub:'無駄を嫌い、洗練されたものを好むあなたには、モノトーンで構成されたスタイリッシュな空間がぴったり。',img:'diag-type-b.png',picks:[{n:'モダンスタイル',d:'モノトーン・ガラス・金属で都会の夜が似合う空間。'},{n:'シンプルモダン',d:'装飾ゼロ。ミニマリストの究極形。'},{n:'ホテルライク',d:'左右対称の美。高級ホテルのような整然とした空間。'},{n:'インダストリアル',d:'鉄とコンクリート。無骨でクールな工場系スタイル。'}]},
+C:{title:'レトロ＆ラフ派',sub:'こだわりが強く自分らしさを大切にするあなたには、経年変化や歴史を感じる素材感のある空間が合います。',img:'diag-type-c.png',picks:[{n:'ヴィンテージスタイル',d:'濃い茶色と革。歴史を感じる渋いスタイル。'},{n:'インダストリアル',d:'鉄・コンクリート・剥き出しの配管。工場のような無骨さ。'},{n:'ミッドセンチュリー',d:'1950年代の近未来感。デザイナーズ家具が主役。'},{n:'ボヘミアン',d:'民族柄・多色使いで旅人のような自由な空間。'}]},
+D:{title:'エキゾチック＆ネイチャー派',sub:'自然と自由を愛するあなたには、開放感あふれるリゾート感や植物に囲まれた空間がぴったり。',img:'diag-type-d.png',picks:[{n:'リゾートスタイル',d:'ラタン・アジアン家具でバリ島や南国の別荘風に。'},{n:'ボタニカルスタイル',d:'植物が主役。緑に飲み込まれるような癒やしの森。'},{n:'西海岸スタイル',d:'デニム・海・褪せたブルー。カリフォルニアの自由な風。'},{n:'ボヘミアン',d:'民族柄・多色使いで旅人のようにアーティスティックに。'}]},
+E:{title:'ハイクラス＆トラディショナル派',sub:'本物志向で上質な暮らしに憧れるあなたには、格式と品格のある空間が似合います。',img:'diag-type-e.png',picks:[{n:'ラグジュアリースタイル',d:'大理石・金・ベルベット。成功者の華やかな部屋。'},{n:'和モダンスタイル',d:'畳・障子・木格子を現代風にアレンジした静寂の美。'},{n:'ホテルライク',d:'整然とした非日常空間。高級ホテルの雰囲気を自宅に。'},{n:'ミッドセンチュリー',d:'本物のデザイナーズ家具が主役の個性的なスタイル。'}]},
+F:{title:'フェミニン＆ノスタルジック派',sub:'感受性豊かで可愛いものに心が動くあなたには、柔らかく温かみのある物語を感じる空間がぴったり。',img:'diag-type-f.png',picks:[{n:'シャビーシックスタイル',d:'剥げた白塗装にレース・アンティーク。古くて上品な空間。'},{n:'カントリースタイル',d:'パイン材とチェック柄。赤毛のアンのような家庭的な温かさ。'},{n:'韓国スタイル',d:'アイボリーとベージュの淡い空間。丸いフォルムで映えを演出。'},{n:'ボタニカルスタイル',d:'花と植物に囲まれた、やさしい癒やしの部屋。'}]}
 };
 function qc(i){return document.querySelectorAll('.qc')[i];}
 function sel(qi,val){ans[qi]=val;qc(qi).querySelectorAll('.opt').forEach(o=>o.classList.toggle('selected',o.dataset.val===val));document.getElementById('n'+qi).disabled=false;}
@@ -269,8 +236,8 @@ function showR(){
   document.getElementById('rb').textContent='あなたは '+top+' タイプ';
   document.getElementById('rt').innerHTML=r.title;
   document.getElementById('rs').textContent=r.sub;
-  const ri=document.getElementById('ri');ri.textContent=r.img;ri.setAttribute('style',r.bg+';width:100%;max-width:360px;aspect-ratio:4/3;border-radius:4px;margin:0 auto 28px;display:flex;align-items:center;justify-content:center;font-size:56px;');
-  document.getElementById('sp').innerHTML=r.picks.map(p=>`<div class="spc"><h4>${p.n}</h4><p>${p.d}</p></div>`).join('');
+  document.getElementById('ri').innerHTML='<img src="'+r.img+'" alt="'+r.title+'" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">';
+  document.getElementById('sp').innerHTML=r.picks.map(p=>'<div class="spc"><h4>'+p.n+'</h4><p>'+p.d+'</p></div>').join('');
   window.scrollTo({top:0,behavior:'smooth'});
 }
 function reset(){ans.fill(null);document.querySelectorAll('.qc').forEach((c,i)=>{c.style.display='';c.classList.toggle('active',i===0);});document.querySelectorAll('.opt').forEach(o=>o.classList.remove('selected'));document.querySelectorAll('[id^=n]').forEach(b=>{if(b.tagName==='BUTTON')b.disabled=true;});document.getElementById('result').style.display='none';document.getElementById('prog').style.width='0%';window.scrollTo({top:0,behavior:'smooth'});}
