@@ -1,108 +1,156 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0">
 <title>モダンスタイル — NOOK</title>
-<meta name="description" content="モダンスタイルのインテリアアイテムを厳選してご紹介。">
+<meta name="description" content="モダンスタイルのインテリアアイテムを厳選。">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 :root{--cr:#F5F0E8;--dk:#1A1814;--wm:#C8A97E;--ac:#8B6F47;--mu:#9A9189;--lb:#E8DFD0;--bd:rgba(200,169,126,0.25);}
+html{scroll-behavior:smooth;}
 body{background:var(--cr);color:var(--dk);font-family:'DM Sans',sans-serif;line-height:1.6;overflow-x:hidden;}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(245,240,232,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--bd);}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(245,240,232,0.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--bd);}
 .logo{font-family:'Playfair Display',serif;font-size:20px;letter-spacing:0.18em;color:var(--dk);text-decoration:none;}
-.nav-r{display:flex;gap:32px;}
+.nav-r{display:flex;gap:28px;}
 .nav-r a{font-size:11px;letter-spacing:0.1em;color:var(--mu);text-decoration:none;text-transform:uppercase;transition:color .2s;}
 .nav-r a:hover{color:var(--dk);}
-.btn{display:inline-block;padding:13px 34px;border-radius:2px;font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:all .25s;border:none;}
+
+/* ── BUTTONS ── */
+.btn{display:inline-block;padding:13px 32px;border-radius:2px;font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:all .25s;border:none;}
 .btn-d{background:var(--dk);color:var(--cr);}
 .btn-d:hover{background:var(--ac);transform:translateY(-2px);}
 .btn-o{background:transparent;color:var(--dk);border:1px solid rgba(26,24,20,.35);}
 .btn-o:hover{border-color:var(--dk);transform:translateY(-2px);}
-.sec{padding:72px 48px;}
-.sec-hd{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px;border-bottom:1px solid var(--bd);padding-bottom:16px;}
-.sec-title{font-family:'Playfair Display',serif;font-size:32px;font-weight:400;}
+
+/* ── SECTIONS ── */
+.sec{padding:64px 40px;}
+.sec-hd{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:36px;border-bottom:1px solid var(--bd);padding-bottom:14px;}
+.sec-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:400;}
 .sec-title em{font-style:italic;color:var(--ac);}
-.see-all{font-size:10px;color:var(--mu);text-transform:uppercase;text-decoration:none;border-bottom:0.5px solid var(--mu);padding-bottom:2px;}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-.grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
-.pc{transition:transform .3s;text-decoration:none;color:inherit;display:block;}
-.pc:hover{transform:translateY(-5px);}
-.pi{border-radius:4px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:var(--lb);}
-.pi .em{font-size:52px;opacity:.42;}
-.ptag{position:absolute;top:10px;left:10px;background:var(--dk);color:var(--cr);font-size:8px;letter-spacing:.12em;text-transform:uppercase;padding:3px 9px;border-radius:2px;}
-.ptag.n{background:var(--ac);}
-.pinfo{padding:14px 2px;}
-.pcat{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--wm);margin-bottom:5px;}
-.pname{font-family:'Playfair Display',serif;font-size:16px;font-weight:400;margin-bottom:5px;}
-.pdesc{font-size:12px;color:var(--mu);line-height:1.55;margin-bottom:12px;}
-.pfoot{display:flex;align-items:center;justify-content:space-between;}
-.price{font-size:14px;font-weight:500;}
-.pbtn{background:none;border:1px solid var(--dk);color:var(--dk);padding:7px 16px;border-radius:2px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:none;display:inline-block;transition:all .2s;}
-.pbtn:hover{background:var(--dk);color:var(--cr);}
+.see-all{font-size:10px;color:var(--mu);text-transform:uppercase;text-decoration:none;border-bottom:0.5px solid var(--mu);padding-bottom:2px;white-space:nowrap;}
+
+/* ── CATEGORY CARDS（5列グリッド）── */
+.grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
 .cat5{position:relative;border-radius:4px;aspect-ratio:2/3;overflow:hidden;cursor:pointer;text-decoration:none;display:block;transition:transform .35s;}
 .cat5:hover{transform:translateY(-6px);}
 .cat5:hover .ov{opacity:.6;}
 .cbg{width:100%;height:100%;}
 .ov{position:absolute;inset:0;background:rgba(26,24,20,.38);opacity:.28;transition:opacity .3s;}
-.clbl{position:absolute;bottom:0;left:0;right:0;padding:16px 12px;background:linear-gradient(transparent,rgba(0,0,0,.65));color:white;}
-.clbl h3{font-family:'Playfair Display',serif;font-size:15px;font-weight:400;}
-.clbl p{font-size:10px;color:rgba(255,255,255,.6);margin-top:3px;}
-.clbl .arr{font-size:11px;margin-top:5px;display:inline-block;transition:transform .2s;}
+.clbl{position:absolute;bottom:0;left:0;right:0;padding:14px 10px;background:linear-gradient(transparent,rgba(0,0,0,.65));color:white;}
+.clbl h3{font-family:'Playfair Display',serif;font-size:13px;font-weight:400;}
+.clbl p{font-size:9px;color:rgba(255,255,255,.6);margin-top:2px;}
+.clbl .arr{font-size:10px;margin-top:4px;display:inline-block;transition:transform .2s;}
 .cat5:hover .arr{transform:translateX(4px);}
-.fbar{padding:48px;background:var(--lb);display:grid;grid-template-columns:repeat(3,1fr);gap:36px;}
-.feat{text-align:center;}
-.fsym{font-size:20px;margin-bottom:10px;color:var(--ac);}
-.feat h4{font-family:'Playfair Display',serif;font-size:15px;margin-bottom:7px;font-weight:400;}
-.feat p{font-size:12px;color:var(--mu);line-height:1.65;}
-footer{background:var(--dk);color:var(--cr);padding:56px 48px 28px;}
-.ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px;}
-.fbrand{font-family:'Playfair Display',serif;font-size:24px;margin-bottom:12px;}
-.ftag{font-size:12px;color:rgba(245,240,232,.42);line-height:1.7;max-width:220px;}
-.fc h5{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--wm);margin-bottom:16px;}
-.fc a{display:block;font-size:12px;color:rgba(245,240,232,.52);text-decoration:none;margin-bottom:9px;}
-.fc a:hover{color:var(--cr);}
-.fb{border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:flex;justify-content:space-between;font-size:10px;color:rgba(245,240,232,.22);}
-.ph{padding:60px 48px 72px;text-align:center;}
-.ph-ey{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--wm);margin-bottom:18px;}
-.ph-t{font-family:'Playfair Display',serif;font-size:clamp(36px,6vw,64px);font-weight:400;line-height:1.1;margin-bottom:18px;}
-.ph-t em{font-style:italic;color:var(--ac);}
-.ph-d{font-size:14px;color:var(--mu);max-width:460px;margin:0 auto;line-height:1.75;}
-.bc{padding:96px 48px 0;font-size:11px;color:var(--mu);}
-.bc a{color:var(--mu);text-decoration:none;}
-.bc span{margin:0 8px;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
-.f1{animation:fadeUp .8s ease both;}
-.f2{animation:fadeUp .9s .1s ease both;}
-.f3{animation:fadeUp 1s .2s ease both;}
-.f4{animation:fadeUp 1s .3s ease both;}
-@media(max-width:768px){nav{padding:14px 18px;}.nav-r a:first-child{display:none;}.sec{padding:52px 18px;}.grid3{grid-template-columns:1fr 1fr;gap:14px;}.grid5{grid-template-columns:repeat(3,1fr);}.fbar{grid-template-columns:1fr;padding:32px 18px;}.ft{grid-template-columns:1fr 1fr;gap:24px;}.ph{padding:120px 18px 52px;}.bc{padding:86px 18px 0;}}.ph{background:linear-gradient(160deg,#f0ede5,#d8d4cc);}
-.rg-wrap{padding:0 48px 48px;}
-.rg-head{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid rgba(200,169,126,0.3);}
-.rg-head em{font-style:italic;color:#8B6F47;}
-.rg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px;}
-.rg-card{background:#fff;border:1px solid rgba(200,169,126,0.25);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s;}
-.rg-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(26,24,20,0.1);}
-.rg-photo{overflow:hidden;aspect-ratio:1/1;background:#F5F0E8;flex-shrink:0;}
+
+/* ── PRODUCT GRID（実商品 3列）── */
+.rg-wrap{padding:0 40px 56px;}
+.rg-head{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;margin-bottom:22px;padding-bottom:12px;border-bottom:1px solid var(--bd);}
+.rg-head em{font-style:italic;color:var(--ac);}
+.rg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:0;}
+.rg-card{background:#fff;border:1px solid var(--bd);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s;}
+.rg-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(26,24,20,.1);}
+.rg-photo{overflow:hidden;aspect-ratio:1/1;background:var(--lb);flex-shrink:0;}
 .rg-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s;}
 .rg-card:hover .rg-photo img{transform:scale(1.05);}
-.rg-body{padding:14px 16px 18px;display:flex;flex-direction:column;flex:1;}
-.rg-badge{display:inline-block;background:#8B6F47;color:#fff;font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:2px;margin-bottom:8px;width:fit-content;}
-.rg-cat{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#C8A97E;margin-bottom:5px;}
-.rg-name{font-family:'Playfair Display',serif;font-size:14px;font-weight:400;line-height:1.3;margin-bottom:7px;color:#1A1814;}
-.rg-desc{font-size:11px;color:#9A9189;line-height:1.55;margin-bottom:12px;flex:1;}
-.rg-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;}
-.rg-price{font-family:'Playfair Display',serif;font-size:15px;font-weight:400;color:#1A1814;white-space:nowrap;}
-.rg-btn a{display:inline-block;background:#f76956;color:#fff;font-size:10px;font-weight:500;padding:8px 14px;border-radius:3px;text-decoration:none;white-space:nowrap;transition:opacity .2s;}
+.rg-body{padding:14px 14px 16px;display:flex;flex-direction:column;flex:1;}
+.rg-badge{display:inline-block;background:var(--ac);color:#fff;font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:3px 7px;border-radius:2px;margin-bottom:8px;width:fit-content;}
+.rg-cat{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--wm);margin-bottom:4px;}
+.rg-name{font-family:'Playfair Display',serif;font-size:13px;font-weight:400;line-height:1.3;margin-bottom:6px;color:var(--dk);}
+.rg-desc{font-size:11px;color:var(--mu);line-height:1.55;margin-bottom:10px;flex:1;}
+.rg-footer{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:auto;}
+.rg-price{font-family:'Playfair Display',serif;font-size:14px;font-weight:400;color:var(--dk);white-space:nowrap;}
+.rg-btn a{display:inline-block;background:#f76956;color:#fff;font-size:9px;font-weight:500;padding:8px 12px;border-radius:3px;text-decoration:none;white-space:nowrap;transition:opacity .2s;}
 .rg-btn a:hover{opacity:.85;}
-@media(max-width:900px){.rg-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:480px){.rg-wrap{padding:0 18px 40px;}.rg-grid{grid-template-columns:1fr;}}
-</style>
+
+/* ── FEATURES BAR ── */
+.fbar{padding:48px 40px;background:var(--lb);display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.feat{text-align:center;}
+.fsym{font-size:20px;margin-bottom:10px;color:var(--ac);}
+.feat h4{font-family:'Playfair Display',serif;font-size:14px;margin-bottom:6px;font-weight:400;}
+.feat p{font-size:12px;color:var(--mu);line-height:1.65;}
+
+/* ── FOOTER ── */
+footer{background:var(--dk);color:var(--cr);padding:56px 40px 28px;}
+.ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+.fbrand{font-family:'Playfair Display',serif;font-size:22px;margin-bottom:12px;}
+.ftag{font-size:12px;color:rgba(245,240,232,.42);line-height:1.7;max-width:200px;}
+.fc h5{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--wm);margin-bottom:14px;}
+.fc a{display:block;font-size:12px;color:rgba(245,240,232,.52);text-decoration:none;margin-bottom:8px;}
+.fc a:hover{color:var(--cr);}
+.fb{border-top:1px solid rgba(255,255,255,.07);padding-top:18px;display:flex;justify-content:space-between;font-size:10px;color:rgba(245,240,232,.22);flex-wrap:wrap;gap:8px;}
+
+/* ── PAGE HERO ── */
+.ph{padding:56px 40px 64px;text-align:center;}
+.ph-ey{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--wm);margin-bottom:14px;}
+.ph-t{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,56px);font-weight:400;line-height:1.1;margin-bottom:14px;}
+.ph-t em{font-style:italic;color:var(--ac);}
+.ph-d{font-size:14px;color:var(--mu);max-width:440px;margin:0 auto;line-height:1.75;}
+.bc{padding:88px 40px 0;font-size:11px;color:var(--mu);}
+.bc a{color:var(--mu);text-decoration:none;}
+.bc span{margin:0 6px;}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+.f1{animation:fadeUp .8s ease both;}
+.f2{animation:fadeUp .85s .1s ease both;}
+.f3{animation:fadeUp .9s .2s ease both;}
+.f4{animation:fadeUp .95s .3s ease both;}
+
+/* ══════════════════════════════════════════
+   MOBILE（〜768px）
+══════════════════════════════════════════ */
+@media(max-width:768px){
+  nav{padding:12px 18px;}
+  .nav-r a:first-child{display:none;}
+
+  .sec{padding:48px 18px;}
+  .sec-hd{margin-bottom:24px;}
+  .sec-title{font-size:22px;}
+
+  .grid5{grid-template-columns:repeat(3,1fr);gap:8px;}
+  .clbl h3{font-size:11px;}
+  .clbl p{display:none;}
+
+  .rg-wrap{padding:0 18px 48px;}
+  .rg-head{font-size:18px;}
+  .rg-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
+  .rg-body{padding:10px 10px 12px;}
+  .rg-name{font-size:12px;}
+  .rg-desc{display:none;}
+  .rg-price{font-size:13px;}
+  .rg-btn a{font-size:9px;padding:7px 10px;}
+
+  .fbar{grid-template-columns:1fr;padding:36px 18px;gap:24px;}
+
+  footer{padding:40px 18px 20px;}
+  .ft{grid-template-columns:1fr 1fr;gap:24px;}
+  .fbrand{font-size:18px;}
+
+  .ph{padding:100px 18px 48px;}
+  .ph-t{font-size:clamp(28px,8vw,44px);}
+  .bc{padding:76px 18px 0;}
+}
+
+/* ══════════════════════════════════════════
+   SMALL MOBILE（〜480px）
+══════════════════════════════════════════ */
+@media(max-width:480px){
+  .grid5{grid-template-columns:repeat(2,1fr);}
+  .rg-grid{grid-template-columns:1fr 1fr;}
+  .ft{grid-template-columns:1fr;}
+  .fb{flex-direction:column;gap:4px;}
+}
+.ph{background:linear-gradient(160deg,#f0ede5,#d8d4cc);}</style>
 </head>
-<body><nav><a href="index.html" class="logo">NOOK</a><div class="nav-r"><a href="diagnosis.html">診断</a><a href="about.html">About us</a></div></nav><div class="bc"><a href="index.html">NOOK</a><span>›</span>系統から探す<span>›</span>Modern</div><section class="ph"><p class="ph-ey">Modern Style</p><h1 class="ph-t">洗練された<em>空間</em>へ</h1><p class="ph-d">シャープなライン・モノトーン・素材感。都会的で洗練されたモダンな部屋を作りましょう。</p></section><div class="rg-wrap"><h2 class="rg-head">実際に買える<em>おすすめアイテム</em></h2><div class="rg-grid"><div class="rg-card"><div class="rg-photo"><img src="wall-art-palm.webp" alt="ウォールアート シュロの葉" loading="lazy"></div><div class="rg-body"><span class="rg-badge">楽天</span><p class="rg-cat">壁面装飾・フォトアート</p><h3 class="rg-name">ウォールアート シュロの葉</h3><p class="rg-desc">モノトーンのボタニカルフォトアート。シュロの葉のシルエットがスタイリッシュ。</p><div class="rg-footer"><span class="rg-price">¥3,680</span><span class="rg-btn"><a href="https://item.rakuten.co.jp/asia-kobo/66804/" target="_blank" rel="nofollow" style="display:inline-block;background:#f76956;color:#fff;font-size:11px;font-weight:500;padding:10px 18px;border-radius:3px;text-decoration:none;letter-spacing:.04em;white-space:nowrap;">楽天市場で見る</a></span></div></div></div><div class="rg-card"><div class="rg-photo"><img src="wall-art-poster.webp" alt="ウォールアート Art Poster" loading="lazy"></div><div class="rg-body"><span class="rg-badge">楽天</span><p class="rg-cat">壁面装飾・3Dアート</p><h3 class="rg-name">ウォールアート Art Poster</h3><p class="rg-desc">ランキング受賞の3D立体絵画。手書きの彫刻風テクスチャーが上質な存在感をもたらす。</p><div class="rg-footer"><span class="rg-price">¥8,800</span><span class="rg-btn"><a href="https://item.rakuten.co.jp/nattyandco/item-0384/" target="_blank" rel="nofollow" style="display:inline-block;background:#f76956;color:#fff;font-size:11px;font-weight:500;padding:10px 18px;border-radius:3px;text-decoration:none;letter-spacing:.04em;white-space:nowrap;">楽天市場で見る</a></span></div></div></div><div class="rg-card"><div class="rg-photo"><img src="pendant-light.png" alt="ペンダントライト" loading="lazy"></div><div class="rg-body"><span class="rg-badge">楽天</span><p class="rg-cat">照明・ペンダント</p><h3 class="rg-name">ペンダントライト</h3><p class="rg-desc">ガラス製の美しいシリンダー型ペンダントライト。モダン・北欧スタイルに最適。5年保証付き。</p><div class="rg-footer"><span class="rg-price">¥5,390</span><span class="rg-btn"><a href="https://item.rakuten.co.jp/hmwr/hm-jd-dd-420/" target="_blank" rel="nofollow" style="display:inline-block;background:#f76956;color:#fff;font-size:11px;font-weight:500;padding:10px 18px;border-radius:3px;text-decoration:none;letter-spacing:.04em;white-space:nowrap;">楽天市場で見る</a></span></div></div></div></div></div>
-<section class="sec"><div class="sec-hd"><h2 class="sec-title">Modern<em>スタイル</em>のアイテム</h2><span class="see-all">6アイテム</span></div><div class="grid3"><a href="#" class="pc"><div class="pi" style="background:linear-gradient(135deg,#2C2C2A,#5F5E5A)"><div class="em">🪞</div><span class="ptag n">人気</span></div><div class="pinfo"><p class="pcat">ミラー</p><h3 class="pname">フルレングス ブラックミラー</h3><p class="pdesc">マットブラックフレームが空間をシャープに引き締める。</p><div class="pfoot"><span class="price">¥18,000〜</span><span class="pbtn">Amazonで見る</span></div></div></a><a href="#" class="pc"><div class="pi" style="background:linear-gradient(135deg,#3c3c3a,#6a6a68)"><div class="em">🖼</div></div><div class="pinfo"><p class="pcat">アート</p><h3 class="pname">モノクロ アブストラクト</h3><p class="pdesc">余白を活かしたシンプルな抽象画ポスター。</p><div class="pfoot"><span class="price">¥2,400〜</span><span class="pbtn">Amazonで見る</span></div></div></a><a href="#" class="pc"><div class="pi" style="background:linear-gradient(135deg,#2c2c2a,#505050)"><div class="em">💡</div><span class="ptag n">人気</span></div><div class="pinfo"><p class="pcat">照明</p><h3 class="pname">マットブラック フロアランプ</h3><p class="pdesc">シンプルな存在感と柔らかな光。定番のモダン照明。</p><div class="pfoot"><span class="price">¥8,800〜</span><span class="pbtn">Amazonで見る</span></div></div></a><a href="#" class="pc"><div class="pi" style="background:linear-gradient(135deg,#3a3a38,#6a6a68)"><div class="em">🛋</div></div><div class="pinfo"><p class="pcat">ソファ</p><h3 class="pname">レザーライク 2人掛け</h3><p class="pdesc">スリムなアームが都会的な印象を生むソファ。</p><div class="pfoot"><span class="price">¥58,000〜</span><span class="pbtn">Amazonで見る</span></div></div></a><a href="#" class="pc"><div class="pi" style="background:linear-gradient(135deg,#484846,#787876)"><div class="em">📦</div><span class="ptag n">New</span></div><div class="pinfo"><p class="pcat">収納</p><h3 class="pname">スチール シェルフ</h3><p class="pdesc">インダストリアルな質感がモダン空間にマッチ。</p><div class="pfoot"><span class="price">¥12,000〜</span><span class="pbtn">Amazonで見る</span></div></div></a><a href="#" class="pc"><div class="pi" style="background:linear-gradient(135deg,#8c7060,#c4a488)"><div class="em">🎨</div></div><div class="pinfo"><p class="pcat">アート</p><h3 class="pname">ジオメトリック ポスター</h3><p class="pdesc">幾何学的な構図がモダンな壁面を演出する。</p><div class="pfoot"><span class="price">¥2,200〜</span><span class="pbtn">Amazonで見る</span></div></div></a></div></section><div class="fbar">
+<body>
+<nav><a href="index.html" class="logo">NOOK</a><div class="nav-r"><a href="diagnosis.html">診断</a><a href="about.html">About us</a></div></nav><div class="bc"><a href="index.html">NOOK</a><span>›</span>系統から探す<span>›</span>Modern</div><section class="ph"><p class="ph-ey">Modern Style</p><h1 class="ph-t">洗練された<em>空間</em>へ</h1><p class="ph-d">シャープなライン・モノトーン。都会的で洗練されたモダンな部屋に。</p></section><div class="rg-wrap"><h2 class="rg-head">実際に買える<em>おすすめアイテム</em></h2><div class="rg-grid"><div class="rg-card"><div class="rg-photo"><img src="wall-art-palm.webp" alt="ウォールアート シュロの葉" loading="lazy"></div><div class="rg-body"><span class="rg-badge">楽天</span><p class="rg-cat">壁面装飾・フォトアート</p><h3 class="rg-name">ウォールアート シュロの葉</h3><p class="rg-desc">モノトーンのボタニカルフォトアート。シュロの葉がスタイリッシュな壁面を作る。</p><div class="rg-footer"><span class="rg-price">¥3,680</span><span class="rg-btn"><a href="https://item.rakuten.co.jp/asia-kobo/66804/" target="_blank" rel="nofollow">楽天市場で見る</a></span></div></div></div><div class="rg-card"><div class="rg-photo"><img src="wall-art-poster.webp" alt="ウォールアート Art Poster" loading="lazy"></div><div class="rg-body"><span class="rg-badge">楽天</span><p class="rg-cat">壁面装飾・3Dアート</p><h3 class="rg-name">ウォールアート Art Poster</h3><p class="rg-desc">ランキング受賞の3D立体絵画。手書きの彫刻風テクスチャーが上質な存在感をもたらす。</p><div class="rg-footer"><span class="rg-price">¥8,800</span><span class="rg-btn"><a href="https://item.rakuten.co.jp/nattyandco/item-0384/" target="_blank" rel="nofollow">楽天市場で見る</a></span></div></div></div><div class="rg-card"><div class="rg-photo"><img src="pendant-light.png" alt="ペンダントライト" loading="lazy"></div><div class="rg-body"><span class="rg-badge">楽天</span><p class="rg-cat">照明・ペンダント</p><h3 class="rg-name">ペンダントライト</h3><p class="rg-desc">ガラス製のシリンダー型ペンダントライト。モダン・北欧スタイルに最適。5年保証付き。</p><div class="rg-footer"><span class="rg-price">¥5,390</span><span class="rg-btn"><a href="https://item.rakuten.co.jp/hmwr/hm-jd-dd-420/" target="_blank" rel="nofollow">楽天市場で見る</a></span></div></div></div></div></div><section class="sec"><div class="sec-hd"><h2 class="sec-title">Modern<em>スタイル</em>のアイテム</h2><span class="see-all">準備中</span></div><p style="font-size:13px;color:var(--mu);padding:20px 0;">随時アイテムを追加していきます。</p></section><div class="fbar">
 <div class="feat"><div class="fsym">✦</div><h4>系統別に厳選</h4><p>スタイルごとに相性抜群のアイテムだけをご紹介しています。</p></div>
 <div class="feat"><div class="fsym">◎</div><h4>コーディネート提案</h4><p>商品の組み合わせでイメージできるように提案します。</p></div>
-<div class="feat"><div class="fsym">↗</div><h4>Amazon・楽天で安心購入</h4><p>信頼できるショップへ直接リンク。安全にお買い物できます。</p></div>
+<div class="feat"><div class="fsym">↗</div><h4>楽天で安心購入</h4><p>信頼できるショップへ直接リンク。安全にお買い物できます。</p></div>
 </div><footer>
 <div class="ft">
   <div><div class="fbrand">NOOK</div><p class="ftag">あなただけの隠れ家を作るための、インテリアコーディネートサービス。</p></div>
@@ -110,6 +158,7 @@ footer{background:var(--dk);color:var(--cr);padding:56px 48px 28px;}
   <div class="fc"><h5>物から選ぶ</h5><a href="wall.html">壁面装飾</a><a href="fabric.html">ファブリック</a><a href="lighting.html">照明</a><a href="plants.html">植物</a><a href="goods.html">雑貨</a></div>
   <div class="fc"><h5>その他</h5><a href="all-products.html">全商品</a><a href="diagnosis.html">診断</a><a href="about.html">About us</a><a href="privacy.html">プライバシーポリシー</a></div>
 </div>
-<div class="fb"><span>© 2025 NOOK. All rights reserved.</span><span>当サイトはアフィリエイト広告（Amazonアソシエイト含む）を掲載しています。</span></div>
-</footer></body>
+<div class="fb"><span>© 2026 NOOK. All rights reserved.</span><span>当サイトはアフィリエイト広告（楽天アフィリエイト含む）を掲載しています。</span></div>
+</footer>
+</body>
 </html>
